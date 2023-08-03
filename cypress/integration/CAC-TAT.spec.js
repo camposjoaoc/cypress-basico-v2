@@ -1,19 +1,19 @@
 /// <reference types="Cypress" />
-
+///Class 01 and 02 (2023-07-31)
 /// basic structure of a test suite
-describe('Central de Atendimento ao Cliente TAT', function () {
-  beforeEach(function () {
+describe('Central de Atendimento ao Cliente TAT', () => {
+  beforeEach(() => {
     //Action here is on verify/access page
     cy.visit('./src/index.html');
   });
 
-  it('Verifica o título da aplicação', function () {
+  it('Check application title', () => {
     // Fetch the title + verify this title (should be equal)
     cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT');
   });
 
   //Exercise 1
-  it('Preenche os campos obrigatórios e envia o formulário', function () {
+  it('Fill in the mandatory fields and send the form', () => {
     const longText =
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ';
 
@@ -39,7 +39,7 @@ describe('Central de Atendimento ao Cliente TAT', function () {
   });
 
   //Exercise 2
-  it('Exibe mensagem de erro ao submeter o formulário com um email, com formatacão inválida', function () {
+  it('Displays error message when submitting the form with an email, with invalid formatting', () => {
     //Email box
     cy.get('#email').type('joaocampos963icloud.com');
 
@@ -52,13 +52,13 @@ describe('Central de Atendimento ao Cliente TAT', function () {
   });
 
   //Exercise 3
-  it('Exibe mensagem de erro ao submeter o formulário com um telefone, com formatacão inválida', function () {
+  it('Displays error message when submitting the form with a phone, with invalid formatting', () => {
     //Phone Box
     cy.get('#phone').type('abcdefgh').should('have.value', '');
   });
 
   //Exercise 4
-  it('Exibe mensagem de erro quando o telefone se torna obrigatório mas não é preenchido antes do envio do formulário', function () {
+  it('Displays error message when phone becomes mandatory but not filled in before form submission', () => {
     // The # means the ID of the field (according to programming)
     //FirstName box
     cy.get('#firstName').type('João');
@@ -84,7 +84,7 @@ describe('Central de Atendimento ao Cliente TAT', function () {
   });
 
   //Exercise 5
-  it('Preenche e limpa os campos nome, sobrenome, email e telefone', function () {
+  it('Fill in and clear the first name, last name, email and phone fields', () => {
     const longText =
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ';
 
@@ -125,7 +125,7 @@ describe('Central de Atendimento ao Cliente TAT', function () {
   });
 
   //Exercise 6
-  it('Exibe mensagem de erro ao submeter o formulário sem preencher os campos obrigatórios', function () {
+  it('Exibe mensagem de erro ao submeter o formulário sem preencher os campos obrigatórios', () => {
     //Button Send
     //Before cy.get('button[type="submit"]').click();
     cy.contains('.button', 'Env').click();
@@ -135,7 +135,7 @@ describe('Central de Atendimento ao Cliente TAT', function () {
   });
 
   //Exercise 7
-  it('Envia o formuário com sucesso usando um comando customizado', function () {
+  it('Displays error message when submitting the form without filling in the mandatory fields', () => {
     //Automatic command
     cy.fillMandatoryFieldsAndSubmit();
 
@@ -144,11 +144,29 @@ describe('Central de Atendimento ao Cliente TAT', function () {
   });
 
   //Exercise 8
-  it('Identifica elementos no botão', function () {
+  it('Identifies elements on the button', () => {
     //Automatic command
     cy.fillMandatoryFieldsAndSubmit();
 
     //Validation - success message
     cy.get('.success').should('be.visible');
   });
+
+  ///Class 03  (2023-08-03)
+  ///Selectors
+
+  //Exercise 0
+  it('Select a product (Youtube) by its text', () => {
+    cy.get('#product').select('YouTube').should('have.value', 'youtube');
+  });
+
+  //Exercise 1
+  it('Select a product (Mentoria) by its value', () => {
+    cy.get('#product').select('mentoria').should('have.value', 'mentoria');
+  });
+
+  //Exercise 2
+  it.only('Select a product (Blog) by its index', () => {
+    cy.get('#product').select(1).should('have.value', 'blog');
+  }); 
 });
