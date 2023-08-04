@@ -166,7 +166,65 @@ describe('Central de Atendimento ao Cliente TAT', () => {
   });
 
   //Exercise 2
-  it.only('Select a product (Blog) by its index', () => {
+  it('Select a product (Blog) by its index', () => {
     cy.get('#product').select(1).should('have.value', 'blog');
-  }); 
-});
+  });
+
+  ///Class 04 and 05  (2023-08-04)
+  ///Radio inputs
+
+  //Exercise 1
+  it('Mark the service type "Feedback"', () => {
+    cy.get('input[type="radio"][value = "feedback"]')
+      .check()
+      .should('have.value', 'feedback');
+  });
+
+  //Exercise extra
+  it('Mark the service type "Atendimento"', () => {
+    cy.get('input[type="radio"]')
+      .should('have.length', 3)
+      .each(function ($radio) {
+        cy.wrap($radio).check();
+        cy.wrap($radio).should('be.checked');
+      });
+  });
+
+  ///CheckBox inputs
+
+  //Exercise 1
+  it.only('check both checkboxes, then uncheck the last one', () => {
+    cy.get('input[type="checkbox"]')
+      .check()
+      .should('be.checked')
+      .last()
+      .uncheck()
+      .should('not.be.checked');
+  });
+
+  //Exercise extra
+  it.only('Displays error message when phone becomes mandatory but not filled in before form submission - Version 2', () => {
+    // The # means the ID of the field (according to programming)
+    //FirstName box
+    cy.get('#firstName').type('João');
+
+    //LastName box
+    cy.get('#lastName').type('Campos');
+
+    //Email box
+    cy.get('#email').type('joaocampos963@icloud.com');
+
+    //Text Box
+    cy.get('#open-text-area').type('Text');
+
+    //Phone checkbox
+    cy.get('#phone-checkbox').check();
+
+    //Button Send
+    //Before cy.get('button[type="submit"]').click();
+    cy.contains('.button', 'Env').click();
+
+    //Validation - error message
+    cy.get('.error').should('be.visible');
+  });
+}); // End Describe
