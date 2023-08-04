@@ -1,29 +1,29 @@
-# Testes automatizados com Cypress - Básico
+# Automated Testing with Cypress - Basic
 
-👋 Seja bem-vindo(a)!
+👋 Welcome!
 
-É muito bom tê-lo(a) aqui. Tenho certeza que você vai adorar este curso. ❤️
+It's great to have you here. I'm sure you will love this course. ❤️
 
-## O que você vai aprender
+## What you will learn
 
-Durante o curso de testes automatizados com Cypress (básico), você vai aprender:
+During the Cypress Automated Testing (Basic) course, you will learn:
 
-- Como configurar um projeto Cypress do zero
-- Como visitar páginas locais e remotas
-- Como lidar com os elementos mais comuns encontrados em aplicações web
-- Como testar _upload_ de arquivos
-- Como realizar as mais diversas verificações de resultados esperados
-- Como criar comandos customizados
-- Como lidar com links que abrem em outra aba do navegador
-- Como rodar testes simulando as dimensões de um dispositivo móvel
-- Como resolver os mesmos problemas de diferentes formas, conhecendo a [API do Cypress](https://docs.cypress.io/api/table-of-contents)
-- Como executar os testes em um _pipeline_ de integração contínua sempre que mudanças ocorrerem no código da aplicação (ou dos testes)
-- Como criar uma documentação mínima para seu projeto de testes automatizados
+- How to set up a Cypress project from scratch
+- How to visit local and remote pages
+- How to deal with the most common elements found in web applications
+- How to test _upload_ files
+- How to perform the most diverse checks of expected results
+- How to create custom commands
+- How to handle links that open in another browser tab
+- How to run tests simulating the dimensions of a mobile device
+- How to solve the same problems in different ways, knowing the [Cypress API](https://docs.cypress.io/api/table-of-contents)
+- How to run tests in a continuous integration _pipeline_ whenever changes occur in the application code (or tests)
+- How to create minimal documentation for your automated testing project
 
-## Vamos começar?
+## Let's start?
 
-Vá para a seção [estrutura do curso](./lessons/_course-structure_.md).
+Go to the [course structure](./lessons/_course-structure_.md) section.
 
 ___
 
-Este é mais um curso da [**Escola Talking About Testing**](https://udemy.com/user/walmyr).
+This is another course from [**Talking About Testing School**](https://udemy.com/user/walmyr).
