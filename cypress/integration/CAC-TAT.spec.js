@@ -240,6 +240,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
       });
   });
 
+  //Exercise extra 1
   it('Selects a file simulating a drag-and-drop', () => {
     cy.get('input[type="file"]#file-upload')
       .should('not.have.value')
@@ -249,6 +250,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
       });
   });
 
+  //Exercise extra 2
   it('Selects a file using a fixture that has been given an alias', () => {
     cy.fixture('example.json').as('SampleFile');
     cy.get('input[type="file"]#file-upload')
