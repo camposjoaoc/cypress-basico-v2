@@ -193,7 +193,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
   ///CheckBox inputs
 
   //Exercise 1
-  it.only('check both checkboxes, then uncheck the last one', () => {
+  it('check both checkboxes, then uncheck the last one', () => {
     cy.get('input[type="checkbox"]')
       .check()
       .should('be.checked')
@@ -203,7 +203,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
   });
 
   //Exercise extra
-  it.only('Displays error message when phone becomes mandatory but not filled in before form submission - Version 2', () => {
+  it('Displays error message when phone becomes mandatory but not filled in before form submission - Version 2', () => {
     // The # means the ID of the field (according to programming)
     //FirstName box
     cy.get('#firstName').type('João');
@@ -227,4 +227,35 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     //Validation - error message
     cy.get('.error').should('be.visible');
   });
-}); // End Describe
+
+  ///Class 06  (2023-08-09)
+  ///Select files
+  //Exercise 0
+  it('Selects a file from the fixtures folder', () => {
+    cy.get('input[type="file"]#file-upload')
+      .should('not.have.value')
+      .selectFile('./cypress/fixtures/example.json')
+      .should((input) => {
+        expect(input[0].files[0].name).to.equal('example.json');
+      });
+  });
+
+  it('Selects a file simulating a drag-and-drop', () => {
+    cy.get('input[type="file"]#file-upload')
+      .should('not.have.value')
+      .selectFile('./cypress/fixtures/example.json', { action: 'drag-drop' })
+      .should((input) => {
+        expect(input[0].files[0].name).to.equal('example.json');
+      });
+  });
+
+  it('Selects a file using a fixture that has been given an alias', () => {
+    cy.fixture('example.json').as('SampleFile');
+    cy.get('input[type="file"]#file-upload')
+      .selectFile('@SampleFile')
+      .should((input) => {
+        expect(input[0].files[0].name).to.equal('example.json');
+      });
+  });
+});
+// End Describe
