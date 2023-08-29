@@ -259,5 +259,21 @@ describe('Central de Atendimento ao Cliente TAT', () => {
         expect(input[0].files[0].name).to.equal('example.json');
       });
   });
+
+  ///Class 07  (2023-08-29)
+  ///External links
+  //Exercise 01
+  it('Verifies that the privacy policy opens in another tab without the need for a click', () => {
+    cy.get('#privacy a').should('have.attr', 'target', '_blank');
+    //-> attr = atribute
+  });
+  //Exercise extra 01
+  it('Access the privacy policy page by removing the target and then clicking on the link', () => {
+    cy.get('#privacy a')
+      .invoke('removeAttr', 'target') //-> attr = atribute
+      .click();
+    //double check on new page
+    cy.contains('Talking About Testing').should('be.visible');
+  });
 });
 // End Describe
