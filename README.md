@@ -1,29 +1,28 @@
-# Automated Testing with Cypress - Basic
+# cypress-basic-v2
+Sample project tfor the basic course of the TAT online school.
 
-👋 Welcome!
+## Pre-requirements
 
-It's great to have you here. I'm sure you will love this course. ❤️
+It is required to have Node.js and npm installed to run this project.
 
-## What you will learn
+> I used versions `v16.13.2` and `8.3.2` of Node.js and npm, respectively. I suggest you use the same or later versions.
 
-During the Cypress Automated Testing (Basic) course, you will learn:
+## Installation
 
-- How to set up a Cypress project from scratch
-- How to visit local and remote pages
-- How to deal with the most common elements found in web applications
-- How to test _upload_ files
-- How to perform the most diverse checks of expected results
-- How to create custom commands
-- How to handle links that open in another browser tab
-- How to run tests simulating the dimensions of a mobile device
-- How to solve the same problems in different ways, knowing the [Cypress API](https://docs.cypress.io/api/table-of-contents)
-- How to run tests in a continuous integration _pipeline_ whenever changes occur in the application code (or tests)
-- How to create minimal documentation for your automated testing project
+Run `npm install` (or `npm i` for the short version) to install the dev dependencies.
 
-## Let's start?
+## Tests
+You can run the tests simulating  a desktop or mobile viewport.
 
-Go to the [course structure](./lessons/_course-structure_.md) section.
+### Desktop
+Run `npm test` (or `npm t` for the short version) to run the test in headless mode on desktop viewport.
 
-___
+Or, run `npm run cy:open` to open Cypress in interactive mode on desktop viewport..
 
-This is another course from [**Talking About Testing School**](https://udemy.com/user/walmyr).
+### Mobile
+Run `npm test` to run the test in headless mode on mobile viewport.
+
+Or, run `npm run cy:open` to open Cypress in interactive mode on mobile viewport.
+
+## Support this project
+If you want to support this project, leave a ⭐.

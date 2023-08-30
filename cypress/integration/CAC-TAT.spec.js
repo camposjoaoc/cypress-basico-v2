@@ -125,7 +125,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
   });
 
   //Exercise 6
-  it('Exibe mensagem de erro ao submeter o formulário sem preencher os campos obrigatórios', () => {
+  it('Displays error message when submitting the form without filling in the required fields', () => {
     //Button Send
     //Before cy.get('button[type="submit"]').click();
     cy.contains('.button', 'Env').click();
@@ -275,5 +275,8 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     //double check on new page
     cy.contains('Talking About Testing').should('be.visible');
   });
+
+   ///Class 08  (2023-08-30)
+  ///viewport mobile - on file "Package.json/scripts"
 });
 // End Describe
