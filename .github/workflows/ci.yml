@@ -1,4 +1,4 @@
-#Pipeline for continuos integration
+#Pipeline for continuos integration_Class11
 name: End-to-end tests 🧪
 on: [push]
 jobs:
